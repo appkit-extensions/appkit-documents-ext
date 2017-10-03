@@ -1,0 +1,66 @@
+﻿{
+    "options": {
+        "fields": {
+            "title": {
+                "label": "Title",
+                "description": "Title for this module",
+                "group": "General",
+                "heading": "",
+                "private": "",
+                "type": "String"
+            },
+            "enable-ui-override": {
+                "label": "Enable UI Override",
+                "description": "Override the default UI for this module",
+                "group": "Advanced",
+                "heading": "",
+                "private": "",
+                "type": "YesNo"
+            },
+            "enable-xml-editing": {
+                "label": "Enable XML Editing",
+                "description": "Show XML to allow advanced editing",
+                "group": "Advanced",
+                "heading": "",
+                "private": "",
+                "type": "YesNo"
+            }
+        },
+        "groups": [ "General", "Advanced" ]
+    },
+    "data": {
+        "documents": {
+            "child": "document",
+            "name": "Document",
+            "thumb": "pdf",
+            "title": "name",
+            "description": "description",
+            "fields": [
+                {
+                    "key": "name",
+                    "type": "string",
+                    "format": "single-line",
+                    "caption": "Title",
+                    "minLength": 2,
+                    "maxLength": 200,
+                    "required": true
+                },
+                {
+                    "key": "description",
+                    "type": "string",
+                    "format": "multi-line",
+                    "caption": "Description",
+                    "required": false,
+                    "placeholder": "optional"
+                },
+                {
+                    "key": "pdf",
+                    "type": "fileref",
+                    "format": "pdf",
+                    "caption": "PDF Document",
+                    "required": true
+                }
+            ]
+        }
+    }
+}
