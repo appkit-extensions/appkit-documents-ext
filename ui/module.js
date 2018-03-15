@@ -1,28 +1,27 @@
-﻿// main module class
-export default class Main extends Module {
+﻿export default class DocumentsModule extends Module {
 
-    constructor() {
-      super();
-        this.state = {
-            documents: []
-        }
+    state = {
+        documents: []
     }
 
-    async moduleWillLoad() {
+    async moduleDataDidUpdate(data) {
 
-        // process document pdfs
-        if (this.data.documents) {
-            for (var i=0; i<this.data.documents.length; i++) {
-                this.data.documents[i].pdf = await Pdf.load(this.data.documents[i].pdf);
-            }
-  		
-            // add to module state
-            this.setState({documents: this.data.documents});
-        }
+        // add data to state
+        this.setState({
+            documents: data.documents
+        })
+    }
+
+    getInitialPageId() {
+        return 'horzScroll';
     }
 
     openDocument(doc) {
-        DocViewer.open(doc.pdf.path);
+        this.pages.popup("view", doc)
+    }
+
+    findDocument(name) {
+        return this.state.documents.find(d => d.name === name);
     }
 
 }

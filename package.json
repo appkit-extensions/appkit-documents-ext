@@ -1,6 +1,6 @@
 {
   "name": "appkit-documents-ext",
-  "version": "0.0.3",
+  "version": "1.0.1",
   "description": "Documents Library",
   "engines": {
     "appkit": "^1.0.0"
@@ -22,7 +22,10 @@
         "ui": {
           "initialPage":  "start",
           "pages": {
-            "start": "ui/pages/start.js"
+            "start": "ui/pages/start.js",
+            "horzScroll": "ui/pages/horzScroll.js",
+            "smaller": "ui/pages/smaller.js",
+            "view": "ui/pages/view.js"
           },
           "module": "ui/module.js"
         }
