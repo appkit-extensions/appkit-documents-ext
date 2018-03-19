@@ -4,7 +4,7 @@
         documents: []
     }
 
-    async moduleDataWillUpdate() {
+    moduleDataWillUpdate() {
         return this.loadModuleContent()
     }
 
