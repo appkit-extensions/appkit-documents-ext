@@ -4,12 +4,12 @@
         documents: []
     }
 
-    async moduleDataDidUpdate(data) {
+    async moduleDataWillUpdate() {
+        return this.loadModuleContent()
+    }
 
-        // add data to state
-        this.setState({
-            documents: data.documents
-        })
+    moduleDataDidUpdate(data) {
+        this.setState({ documents: data.documents })
     }
 
     getInitialPageId() {
