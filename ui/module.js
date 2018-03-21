@@ -9,7 +9,7 @@
     }
 
     moduleDataDidUpdate(data) {
-        this.setState({ documents: data.documents })
+        this.setState({ documents: data && data.documents || [] })
     }
 
     getInitialPageId() {
